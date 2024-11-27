@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e11d3c3b-b5b4-4517-932f-13152a67d52c" name="Changes" comment="My First Commit" />
+    <list default="true" id="e11d3c3b-b5b4-4517-932f-13152a67d52c" name="Changes" comment="Commit">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,7 +47,7 @@
     "Django Server.medi_track.executor": "Run",
     "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -99,7 +101,7 @@
       <option name="presentableId" value="Default" />
       <updated>1732635911975</updated>
       <workItem from="1732635920476" duration="2691000" />
-      <workItem from="1732685124075" duration="18273000" />
+      <workItem from="1732685124075" duration="19846000" />
     </task>
     <task id="LOCAL-00001" summary="My First Commit">
       <option name="closed" value="true" />
@@ -109,7 +111,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732708071915</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Commit">
+      <option name="closed" value="true" />
+      <created>1732708677575</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1732708677575</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -117,6 +127,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="My First Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="My First Commit" />
+    <MESSAGE value="Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit" />
   </component>
 </project>
