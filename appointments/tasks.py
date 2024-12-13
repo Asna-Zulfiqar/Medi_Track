@@ -27,7 +27,7 @@ def send_appointment_email(appointment_id, status):
     We kindly request you to review the appointment details. If you have any questions or if any changes are required, please do not hesitate to contact us.
 
     Best regards,
-    The MediTrack Team
+    Medi Track Hospital Management
     """
 
     # Sending email to the patient
@@ -54,7 +54,7 @@ def send_appointment_email(appointment_id, status):
     Please ensure to be available at the scheduled time. If there are any updates or changes, kindly let us know.
 
     Best regards,
-    The MediTrack Team
+    Medi Track Hospital Management
     """
 
     # Sending email to the doctor
@@ -90,7 +90,7 @@ def send_appointment_reminder(appointment_id):
             send_mail(subject, message, 'codingfalsafa@gmail.com', recipient_list)
 
             subject = f"Reminder: Upcoming appointment with {appointment.patient.user.username}"
-            message = f"Dear Dr. {appointment.doctor.user.username},\n\nThis is a reminder that you have an appointment with {appointment.patient.user.username} on {appointment.appointment_date}.\n\nBest regards,\nYour Healthcare Team"
+            message = f"Dear Dr. {appointment.doctor.user.username},\n\nThis is a reminder that you have an appointment with {appointment.patient.user.username} on {appointment.appointment_date}.\n\nBest regards,\nMedi Track Hospital Management"
             recipient_list = [appointment.doctor.user.email]
 
             # Send email to the doctor
