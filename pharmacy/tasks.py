@@ -68,7 +68,7 @@ def send_reorder_alert(pharmacy_email, pharmacy_name, medicine_name, stock, reor
     Thank you for your attention to this matter.
 
     Best regards,
-    Your Pharmacy Management System Team
+    Medi Track Hospital Management
     """
 
     # Sending the email
