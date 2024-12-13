@@ -10,7 +10,7 @@ celery~=5.4.0
 redis~=5.2.0
 
 # Report Generation
-WeasyPrint==63.1  # For generating PDFs
+WeasyPrint==63.1  # For generating PDFs for bills
 
 # Firebase (For notifications)
 firebase-admin~=6.6.0
