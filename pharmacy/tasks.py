@@ -37,7 +37,7 @@ def send_medicine_allocation_emails_task(patient_id, pharmacy_name, pharmacy_ema
                       f"Pharmacy Name: {pharmacy_name}\n" \
                       f"Your purchase will be processed shortly. If you have any questions, please contact the pharmacy.\n\n" \
                       f"Best regards,\n" \
-                      f"The Healthcare System"
+                      f"Medi Track Hospital Management"
 
     send_mail(
         patient_subject,
