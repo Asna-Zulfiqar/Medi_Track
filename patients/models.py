@@ -3,13 +3,14 @@ from django.db import models
 from django.contrib.auth.models import User
 
 class Patient(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    age = models.PositiveIntegerField()
-    gender = models.CharField(max_length=10)
-    contact = models.CharField(max_length=15)
-    emergency_contact = models.CharField(max_length=15)
-    address = models.TextField()
-    date_of_birth = models.DateField()
+    user = models.OneToOneField(User, on_delete=models.CASCADE , related_name='patient_profile')
+    age = models.PositiveIntegerField(null=True, blank=True)
+    gender = models.CharField(max_length=10 , null=True, blank=True)
+    contact = models.CharField(max_length=15 ,null=True, blank=True)
+    emergency_contact = models.CharField(max_length=15 ,null=True, blank=True)
+    address = models.TextField(null=True, blank=True)
+    date_of_birth = models.DateField(null=True, blank=True)
+    income = models.PositiveIntegerField(null=True, blank=True)
 
     def clean(self):
         # Ensure that the user is in the "Patient" group

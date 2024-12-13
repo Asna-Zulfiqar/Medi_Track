@@ -1,0 +1,33 @@
+# Python
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# Virtual Environments
+.venv/
+env/
+venv/
+
+# PyCharm
+.idea/
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Database
+*.sqlite3
+*.db
+
+# Test directories
+tests/__pycache__/
+
+# Environment variables
+.env
+
+# Firebase service account key (ensure you adjust the path as necessary)
+medi_track/settings/serviceAccountKey.json

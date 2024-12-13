@@ -1,7 +1,6 @@
 from django.contrib import admin
 from patients.models import Patient, Condition, Allergy, Surgery, MedicalHistory
 
-
 admin.site.register(Patient)
 admin.site.register(Condition)
 admin.site.register(Allergy)

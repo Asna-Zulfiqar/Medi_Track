@@ -1,12 +1,14 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User, Group
 from rest_framework_simplejwt.tokens import RefreshToken
+from patients.models import Patient
+
 
 class UserSerializer(serializers.ModelSerializer):
     groups = serializers.SerializerMethodField()
     class Meta:
         model = User
-        fields = [ 'username' , 'email' , 'first_name' , 'last_name' , 'groups' , 'is_active']
+        fields = [ 'username' , 'email' , 'first_name' , 'last_name' , 'groups' ]
 
     def get_groups(self, obj):
         # Return the names of the groups the user belongs to
@@ -15,8 +17,14 @@ class UserSerializer(serializers.ModelSerializer):
 class RegisterSerializer(serializers.ModelSerializer):
     role_choices = [
         ('Doctor' , 'Doctor'),
-        ('Staff' , 'Staff'),
         ('Patient' , 'Patient'),
+        ('Pharmacist' , 'Pharmacist'),
+        ('Ward Manager' , 'Ward Manager'),
+        ('Accountant' , 'Accountant'),
+        ('Lab Technician' , 'Lab Technician'),
+        ('Sweeper' , 'Sweeper'),
+        ('Nurse' , 'Nurse'),
+        ('Security Guard' , 'Security Guard'),
     ]
 
     role = serializers.ChoiceField(choices=role_choices)
@@ -38,6 +46,10 @@ class RegisterSerializer(serializers.ModelSerializer):
         # Assign to group based on role
         group, created = Group.objects.get_or_create(name=role)
         user.groups.add(group)
+        if role == 'Patient':
+            # Trigger signal by creating a Patient instance
+            Patient.objects.create(user=user)
+
         return user
 
 

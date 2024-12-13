@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Medi Track Hospital Bill</title>
+    <style>
+        :root {
+            --primary-color: #2C3E50;       /* Deep Blue-Gray */
+            --secondary-color: #34495E;     /* Slightly Lighter Blue-Gray */
+            --accent-color: #2980B9;        /* Vibrant Blue */
+            --light-background: #ECF0F1;    /* Light Gray-Blue */
+            --text-color: #333;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-background);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .bill-container {
+            max-width: 850px;
+            margin: 30px auto;
+            background-color: var(--white);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            padding: 0;
+        }
+
+        .header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 25px;
+            position: relative;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(to right, var(--accent-color), var(--secondary-color));
+        }
+
+        .header h1 {
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+
+        .patient-info, 
+        .bill-details,
+        .accountant-info {
+            padding: 20px;
+            background-color: var(--white);
+        }
+
+        .section-title {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 12px 15px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            border-left: 4px solid var(--accent-color);
+            margin-bottom: 15px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .info-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        .info-item span {
+            color: var(--secondary-color);
+            font-weight: 500;
+        }
+
+        .bill-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin-bottom: 20px;
+        }
+
+        .bill-table th {
+            background-color: var(--light-background);
+            color: var(--primary-color);
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 2px solid var(--accent-color);
+            font-weight: 600;
+        }
+
+        .bill-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .bill-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .total-section {
+            text-align: right;
+            padding: 20px;
+            background-color: var(--light-background);
+            margin: 0 20px;
+        }
+
+        .total-section p {
+            margin: 10px 0;
+        }
+
+        .total-section strong {
+            color: var(--accent-color);
+            font-size: 1.2em;
+        }
+
+        .footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 20px;
+            font-size: 0.85em;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="bill-container">
+        <div class="header">
+            <h1>Medi Track Hospital</h1>
+            <p>Comprehensive Medical Care with Compassion</p>
+            <p>Bill Statement</p>
+        </div>
+
+        <div class="patient-info">
+            <div class="section-title">Patient Information</div>
+            <div class="info-grid">
+                <div class="info-item">
+                    <span>First Name:</span>
+                    <strong>{{ patient.user.first_name }}</strong>
+                </div>
+                <div class="info-item">
+                    <span>Last Name:</span>
+                    <strong>{{ patient.user.last_name }}</strong>
+                </div>
+                <div class="info-item">
+                    <span>Patient ID:</span>
+                    <strong>{{ patient.id }}</strong>
+                </div>
+                <div class="info-item">
+                    <span>Emergency Patient:</span>
+                    <strong>{{ emergency_patient }}</strong>
+                </div>
+                <div class="info-item">
+                    <span>Contact Number:</span>
+                    <strong>{{ patient.contact }}</strong>
+                </div>
+                <div class="info-item">
+                    <span>Gender:</span>
+                    <strong>{{ patient.gender }}</strong>
+                </div>
+                <div class="info-item">
+                    <span>Emergency Contact:</span>
+                    <strong> {{ patient.emergency_contact }}</strong>
+                </div>
+                <div class="info-item">
+                    <span>Income:</span>
+                    <strong>{{ patient.income }}</strong>
+                </div>
+            </div>
+        </div>
+
+        <div class="bill-details">
+            <div class="section-title">Doctor Consultation</div>
+            <table class="bill-table">
+                <thead>
+                    <tr>
+                        <th>Doctor Name</th>
+                        <th>Specialization</th>
+                        <th>Consultation Fee</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for consultation in consultations %}
+                    <tr>
+                        <td>Dr. {{ consultation.doctor.user.username }}</td>
+                        <td>{{ consultation.doctor.specialization }}</td>
+                        <td>${{ consultation.doctor.consultation_fee }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <div class="section-title">Ward and Bed Charges</div>
+            {% if ward_detail %}
+            <table class="bill-table">
+                <thead>
+                    <tr>
+                        <th>Ward Type</th>
+                        <th>Days Stayed</th>
+                        <th>Rate per Day</th>
+                        <th>Total Ward Charges</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ ward_detail.ward_name }}</td>
+                        <td>{{ ward_detail.days_stayed }}</td>
+                        <td>$ {{ ward_detail.daily_fee }}</td>
+                        <td>$ {{ ward_detail.total_fee }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            {% else %}
+            <p>No ward stay recorded.</p>
+            {% endif %}
+        
+            <div class="section-title">Medicines Purchased</div>
+            <table class="bill-table">
+                <thead>
+                    <tr>
+                        <th>Medicine Name</th>
+                        <th>Quantity</th>
+                        <th>Unit Price</th>
+                        <th>Total Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for medicine_allocation in medicines_allocations %}
+                    <tr>
+                        <td>{{ medicine_allocation.medicine.medicine_name }}</td>
+                        <td>{{ medicine_allocation.quantity }}</td>
+                        <td>${{ medicine_allocation.medicine.price }}</td>
+                        <td>${{ medicine_allocation.total_price|floatformat:2 }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <div class="section-title">Surgical Procedures</div>
+            {% if procedure %}
+            <table class="bill-table">
+                <thead>
+                    <tr>
+                        <th>Procedure Name</th>
+                        <th>Surgeon</th>
+                        <th>Procedure Charges</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ procedure.name }}</td>
+                        <td>Dr. {{ procedure.doctor.user.username }}</td>
+                        <td>${{ procedure.price }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            {% else %}
+            <p>No surgeries recorded.</p>
+            {% endif %}
+
+
+            <div class="section-title">Laboratory Tests</div>
+            <table class="bill-table">
+                <thead>
+                    <tr>
+                        <th>Test Name</th>
+                        <th>Test Charges</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for test in tests_allocation %}
+                    <tr>
+                        <td>{{ test.prescription.test.test_name }}</td>
+                        <td>${{ test.prescription.test.price }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <div class="total-section">
+                <p>Subtotal: ${{ subtotal }}</p>
+                <p>Discount: {{ discount }} %</p>
+                <p><strong>Total Amount: ${{ total }}</strong></p>
+            </div>
+        </div>
+
+        <div class="accountant-info">
+            <div class="section-title">Billing Department Details</div>
+            <div class="info-grid">
+                <div class="info-item">
+                    <span>Accountant Name:</span>
+                    <strong>{{ accountant.user.username }}</strong>
+                </div>
+                <div class="info-item">
+                    <span>Contact Number:</span>
+                    <strong>{{ accountant.contact }}</strong>
+                </div>
+                <div class="info-item">
+                    <span>Department:</span>
+                    <strong>Billing Department</strong>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Thank you for choosing Medi Track Hospital. Your health is our priority.</p>
+            <p>If you have any billing inquiries, please contact our billing department.</p>
+            <p>&copy; 2024 Medi Track Hospital - All Rights Reserved</p>
+        </div>
+    </div>
+    
+</body>
+</html>

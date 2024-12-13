@@ -5,7 +5,8 @@ class DoctorSerializer(serializers.ModelSerializer):
     username = serializers.SerializerMethodField()
     class Meta:
         model = Doctor
-        fields = ['username', 'specialization', 'contact', 'experience']
+        fields = ['username', 'age' ,'blood', 'specialization', 'ward','contact',
+                  'experience' , 'shift_timings' , 'is_available' ]
 
     def get_username(self, obj):
         return obj.user.username

@@ -1,3 +1,8 @@
 from django.contrib import admin
+from .models import DeviceToken
 
-# Register your models here.
+class DeviceTokenAdmin(admin.ModelAdmin):
+    list_display = ('user', 'token', 'created_at')
+
+
+admin.site.register(DeviceToken, DeviceTokenAdmin)

@@ -5,7 +5,114 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e11d3c3b-b5b4-4517-932f-13152a67d52c" name="Changes" comment="Commit">
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/appointments/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/appointments/signals.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/appointments/tasks.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/appointments/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/billing/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/billing/signals.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/billing/tasks.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/billing/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/billing/utils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/feedback/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/feedback/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/laboratory/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/laboratory/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/laboratory/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/laboratory/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/laboratory/tasks.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/laboratory/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/laboratory/validators.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leaves/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leaves/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leaves/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leaves/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leaves/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leaves/tasks.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leaves/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leaves/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leaves/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medi_track/celery.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medical_records/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medical_records/tasks.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medical_records/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notifications/push_notifications.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notifications/utils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/patients/signals.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/patients/tasks.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pharmacy/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pharmacy/signals.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pharmacy/tasks.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pharmacy/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staff/permissions.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staff/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staff/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/firebase-messaging-sw.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/bill.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/tasks.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wards/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wards/signals.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wards/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/medi_track.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/medi_track.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appointments/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/appointments/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appointments/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/appointments/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appointments/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/appointments/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appointments/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/appointments/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/billing/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/billing/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/billing/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/billing/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/billing/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/billing/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/billing/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/billing/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctors/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/doctors/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctors/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/doctors/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctors/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/doctors/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctors/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/doctors/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctors/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/doctors/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emergency/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emergency/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/laboratory/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emergency/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/leaves/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emergency/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emergency/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/laboratory/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emergency/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/laboratory/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emergency/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/laboratory/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feedback/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/feedback/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feedback/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/feedback/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feedback/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/feedback/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medi_track/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/medi_track/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medi_track/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/medi_track/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medi_track/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/medi_track/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medical_records/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/medical_records/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medical_records/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/medical_records/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medical_records/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/medical_records/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notifications/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/notifications/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notifications/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/notifications/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notifications/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/notifications/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/patients/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/patients/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/patients/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/patients/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/patients/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/patients/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/patients/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/patients/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/patients/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/patients/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/patients/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/patients/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pharmacy/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/pharmacy/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pharmacy/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/pharmacy/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pharmacy/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/pharmacy/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pharmacy/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/pharmacy/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_outline" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staff/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/staff/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staff/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/staff/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/staff/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/staff/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wards/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/wards/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wards/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/wards/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wards/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/wards/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wards/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/wards/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,18 +125,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Asna-Zulfiqar"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Asna-Zulfiqar&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Asna-Zulfiqar/Medi_Track.git",
-    "accountId": "e410aafe-627b-46fa-a08e-d1296f8f8610"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Asna-Zulfiqar/Medi_Track.git&quot;,
+    &quot;accountId&quot;: &quot;e410aafe-627b-46fa-a08e-d1296f8f8610&quot;
   }
-}]]></component>
+}</component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -47,7 +154,12 @@
     "Django Server.medi_track.executor": "Run",
     "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "django.template.preview.state": "SHOW_EDITOR",
     "git-widget-placeholder": "main",
+    "last_opened_file_path": "/home/asna/PycharmProjects/medi_track/medical_records",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -57,6 +169,16 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/medical_records" />
+      <recent name="$PROJECT_DIR$/patients" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/medi_track/settings" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="medi_track" type="Python.DjangoServer" factoryName="Django server">
       <module name="medi_track" />
@@ -87,8 +209,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-PY-242.23726.102" />
-        <option value="bundled-python-sdk-5e1850174b45-399fe30bd8c1-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-242.23726.102" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-PY-243.22562.180" />
+        <option value="bundled-python-sdk-85c76a3b01b3-9a18a617cbe4-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.22562.180" />
       </set>
     </attachedChunks>
   </component>
@@ -101,7 +223,24 @@
       <option name="presentableId" value="Default" />
       <updated>1732635911975</updated>
       <workItem from="1732635920476" duration="2691000" />
-      <workItem from="1732685124075" duration="19846000" />
+      <workItem from="1732685124075" duration="24211000" />
+      <workItem from="1732729722222" duration="5571000" />
+      <workItem from="1732771424761" duration="20126000" />
+      <workItem from="1732857907846" duration="24975000" />
+      <workItem from="1732968696494" duration="20000" />
+      <workItem from="1733055121062" duration="113000" />
+      <workItem from="1733118648170" duration="2790000" />
+      <workItem from="1733133964834" duration="11750000" />
+      <workItem from="1733152546610" duration="416000" />
+      <workItem from="1733465847412" duration="22748000" />
+      <workItem from="1733660122600" duration="5177000" />
+      <workItem from="1733721125332" duration="28067000" />
+      <workItem from="1733807347671" duration="2678000" />
+      <workItem from="1733823051473" duration="13422000" />
+      <workItem from="1733893952009" duration="25857000" />
+      <workItem from="1733925261100" duration="123000" />
+      <workItem from="1733980499266" duration="29496000" />
+      <workItem from="1734066831726" duration="3261000" />
     </task>
     <task id="LOCAL-00001" summary="My First Commit">
       <option name="closed" value="true" />
@@ -124,6 +263,20 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName=".env" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="My First Commit" />

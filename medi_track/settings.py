@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import firebase_admin
+from firebase_admin import credentials
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-mam!3!4gvawd)^g!5cd8gc(sg5a3tkyn(r5o@=m!7h&rx$*q=@'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -42,6 +45,15 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'doctors.apps.DoctorsConfig',
     'patients.apps.PatientsConfig',
+    'pharmacy.apps.PharmacyConfig',
+    'wards.apps.WardsConfig',
+    'medical_records.apps.MedicalRecordsConfig',
+    'laboratory.apps.LaboratoryConfig',
+    'billing.apps.BillingConfig',
+    'appointments.apps.AppointmentsConfig',
+    'staff.apps.StaffConfig',
+    'leaves.apps.LeavesConfig',
+    'feedback.apps.FeedbackConfig',
 ]
 
 MIDDLEWARE = [
@@ -121,17 +133,24 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
-
 USE_I18N = True
 
 USE_TZ = True
+TIME_ZONE = 'Asia/Karachi'
+
+
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [BASE_DIR / "static"]
+
+
+# Media File ( Images , PDFs )
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
@@ -140,8 +159,55 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Email Settings
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'codingfalsafa@gmail.com'
-EMAIL_HOST_PASSWORD = 'drwx sslk ssgz fbxm'
+EMAIL_HOST = config('EMAIL_HOST')
+EMAIL_PORT = config('EMAIL_PORT', cast=int)
+EMAIL_USE_TLS = config('EMAIL_USE_TLS', cast=bool)
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+
+# Celery Settings
+CELERY_BROKER_URL = config('CELERY_BROKER_URL')
+CELERY_RESULT_BACKEND = config('CELERY_RESULT_BACKEND')
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+
+# Firebase Settings
+
+# Path to the Firebase service account key
+FIREBASE_CREDENTIAL_PATH = Path(__file__).resolve().parent / 'settings/serviceAccountKey.json'
+
+# Initialize Firebase Admin
+def initialize_firebase():
+    try:
+        # Attempt to get the app. If not found, it raises an exception.
+        firebase_admin.get_app()
+    except ValueError:
+        # Initialize the Firebase app if it hasn't been initialized yet
+        cred = credentials.Certificate(FIREBASE_CREDENTIAL_PATH)
+        firebase_admin.initialize_app(cred)
+
+initialize_firebase()
+
+
+# Logging Settings
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'level': 'INFO',
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'level': 'INFO',
+            'propagate': True,
+        },
+    },
+}
+
+
+# Base URL
+SITE_URL = "http://127.0.0.1:8000"

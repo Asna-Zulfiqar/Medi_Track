@@ -1,8 +1,6 @@
 from rest_framework import serializers
 from patients.models import Patient, Condition, Allergy, Surgery, MedicalHistory
 
-
-
 class ConditionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Condition
@@ -56,6 +54,7 @@ class PatientSerializer(serializers.ModelSerializer):
         fields = [
             'id', 'user', 'age', 'gender', 'contact',
             'emergency_contact', 'address', 'date_of_birth',
+            'income',
             'medical_history'
         ]
         depth = 1

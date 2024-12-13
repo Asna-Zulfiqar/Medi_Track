@@ -1,30 +1,15 @@
 from rest_framework.exceptions import PermissionDenied, ValidationError
-from rest_framework.generics import CreateAPIView, ListCreateAPIView, RetrieveUpdateDestroyAPIView
+from rest_framework.generics import  ListCreateAPIView, RetrieveUpdateDestroyAPIView
 from rest_framework.permissions import IsAuthenticated
 from patients.serializers import PatientSerializer , MedicalHistorySerializer
 from patients.models import MedicalHistory, Patient, Surgery, Allergy , Condition
-
-
-class PatientCreateView(CreateAPIView):
-    serializer_class = PatientSerializer
-    permission_classes = [IsAuthenticated]
-
-    def get_queryset(self):
-        return Patient.objects.all()
-
-    def perform_create(self, serializer):
-        # Assign the logged-in user as the user for the Patient instance
-        user = self.request.user
-        if Patient.objects.filter(user=user).exists():
-            raise ValidationError("You already have a Patient identity.")
-        serializer.save(user=user)
+from staff.permissions import IsPatientGroup
 
 class MedicalHistoryListCreateView(ListCreateAPIView):
     serializer_class = MedicalHistorySerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated , IsPatientGroup]
 
     def get_queryset(self):
-        # Return only the medical histories for the logged-in user's patient
         return MedicalHistory.objects.filter(patient__user=self.request.user)
 
     def perform_create(self, serializer):
@@ -32,13 +17,12 @@ class MedicalHistoryListCreateView(ListCreateAPIView):
         if MedicalHistory.objects.filter(patient=patient).exists():
             raise ValidationError("This Patient Already has a Medical History Record.")
 
-        # Automatically assign the currently logged-in user as the patient
         patient = Patient.objects.get(user=self.request.user)
         serializer.save(patient=patient)
 
-class PatientDetailView(RetrieveUpdateDestroyAPIView):
+class PatientProfileView(RetrieveUpdateDestroyAPIView):
     serializer_class = PatientSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated, IsPatientGroup]
 
     def get_object(self):
         user = self.request.user

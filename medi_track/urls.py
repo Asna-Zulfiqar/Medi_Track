@@ -22,4 +22,13 @@ urlpatterns = [
     path('users/' , include('users.urls')),
     path('doctor/' , include('doctors.urls')),
     path('patient/' , include('patients.urls')),
+    path('pharmacy/' , include('pharmacy.urls')),
+    path('laboratory/' , include('laboratory.urls')),
+    path('wards/' , include('wards.urls')),
+    path('medical_record/' , include('medical_records.urls')),
+    path('appointment/' , include('appointments.urls')),
+    path('leaves/' , include('leaves.urls')),
+    path('feedback/' , include('feedback.urls')),
+    path('billing/' , include('billing.urls')),
+    path('staff/' , include('staff.urls')),
 ]
