@@ -1,6 +1,5 @@
 from rest_framework.generics import  RetrieveUpdateDestroyAPIView
 from rest_framework.permissions import IsAuthenticated
-
 from billing.models import Accountant
 from staff.models import Receptionist, SecurityGuard, Sweeper, Nurse
 from staff.serializers import ReceptionistSerializer, SecurityGuardSerializer, SweeperSerializer, NurseSerializer, \
