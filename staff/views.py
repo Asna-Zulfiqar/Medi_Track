@@ -1,8 +1,12 @@
 from rest_framework.generics import  RetrieveUpdateDestroyAPIView
 from rest_framework.permissions import IsAuthenticated
+
+from billing.models import Accountant
 from staff.models import Receptionist, SecurityGuard, Sweeper, Nurse
-from staff.serializers import ReceptionistSerializer, SecurityGuardSerializer, SweeperSerializer, NurseSerializer
-from staff.permissions import IsSecurityGuardGroup , IsNurseGroup , IsSweeperGroup , IsReceptionistGroup
+from staff.serializers import ReceptionistSerializer, SecurityGuardSerializer, SweeperSerializer, NurseSerializer, \
+    AccountantSerializer
+from staff.permissions import IsSecurityGuardGroup, IsNurseGroup, IsSweeperGroup, IsReceptionistGroup, IsAccountantGroup
+
 
 # Receptionist Views
 class ReceptionistDetailView(RetrieveUpdateDestroyAPIView):
@@ -75,3 +79,19 @@ class NurseDetailView(RetrieveUpdateDestroyAPIView):
     def get_queryset(self):
         return Nurse.objects.filter(user=self.request.user)
 
+
+# Accountant Views
+class AccountantDetailView(RetrieveUpdateDestroyAPIView):
+    serializer_class = AccountantSerializer
+    permission_classes = [IsAuthenticated, IsAccountantGroup]
+
+    def get_object(self):
+        # Get the current logged-in user
+        user = self.request.user
+
+        # Fetch or create the Accountant object associated with the current user
+        accountant, created = Accountant.objects.get_or_create(user=user)
+        return accountant
+
+    def get_queryset(self):
+        return Accountant.objects.filter(user=self.request.user)

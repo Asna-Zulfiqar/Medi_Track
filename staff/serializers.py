@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from staff.models import Receptionist, SecurityGuard, Sweeper, Nurse
+from billing.models import Accountant
 
 class ReceptionistSerializer(serializers.ModelSerializer):
     class Meta:
@@ -25,5 +26,11 @@ class SweeperSerializer(serializers.ModelSerializer):
 class NurseSerializer(serializers.ModelSerializer):
     class Meta:
         model = Nurse
+        fields = ['age' , 'contact' , 'is_available' , 'shift_timings' , 'ward']
+        read_only_fields = ['user']
+
+class AccountantSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Accountant
         fields = ['age' , 'contact' , 'is_available' , 'shift_timings' , 'ward']
         read_only_fields = ['user']
