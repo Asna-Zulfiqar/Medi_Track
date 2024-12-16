@@ -213,5 +213,5 @@ class HospitalBill(models.Model):
     def save(self, *args, **kwargs):
         """Override save to ensure the total amount is copied from the related Billing model."""
         if not self.total_amount:
-            self.total_amount = self.patient.billing.total_amount  # Assuming the billing model is linked to the patient
+            self.total_amount = self.patient.billing.total_amount  
         super().save(*args, **kwargs)
