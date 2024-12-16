@@ -64,7 +64,7 @@ class HospitalBillBatchUpdateView(APIView):
         Handle batch updates for hospital bills, allowing multiple bills to be updated at once.
         """
         bill_ids = request.data.get('bill_ids', [])
-        status_value = request.data.get('status', None)  # Renamed status to avoid conflict
+        status_value = request.data.get('status', None)  
         amount_paid = request.data.get('amount_paid', None)
 
         if not bill_ids:
@@ -79,7 +79,7 @@ class HospitalBillBatchUpdateView(APIView):
             return Response({"error": "No hospital bills found for the provided IDs."}, status=status.HTTP_404_NOT_FOUND)
 
         # Get the current accountant
-        accountant = request.user.accountant_profile  # Assuming the user is linked to an accountant instance
+        accountant = request.user.accountant_profile  
 
         # Update each bill
         updated_bills = []
